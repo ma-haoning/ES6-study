@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //函数的参数也得一一对应
+    // 语法 fn:function(参数名1="默认值1",参数名2="默认值2") {
+    //    函数体
+    //}
+    //fn(1,2)
+
+    // function f(a = 1, b = 2) {
+    //     console.log(a, b, a + b);
+    // }
+    // f(10)  //输出 10 2 12
+    // f(10, 20) //输出 10 20 30
+    // f()     //输出 1 2 3
+
+
+    // function f2(a = 1, b) {
+    //     console.log(a, b, a + b);
+    // }
+    // f2(10)  //输出 10 undefined Nan
+    // f2(10, 20)  //输出 10 20 30
+    // // f2(, 3)  //报错
+    // f2()  // 输出 1 undefined Nan
+
+
+    // 函数的参数的剩余值也是用[]包括
+    //rest参数 ...
+    // function f2(x, ...y) {
+    //     console.log(x, y)
+    // }
+    // f2(1, 2);   //输出 1 [2]
+    // f2(2, 3, 4);  //输出  2 [3,4]
+
+
+    // arguments是一个伪数组  然而函数的参数的剩余值是一个数组
+
+    //arguments用来获取调用函数时传入的每一个参数  剩余值正好也把每一个参数收集到一个正八经的数组里面  所以效果差不多
+
+
+</script>
+
+</html>

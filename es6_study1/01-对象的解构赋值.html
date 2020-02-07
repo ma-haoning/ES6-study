@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    //对象的解构赋值的语法
+    //let {"属性名1"：变量1=默认值1,"属性名2"：变量2=默认值2}={"属性名1"：属性值1,"属性名2"：属性值2}
+    //他的含义  对于左侧的属性名而言 如果在右侧的对象中可以看到右侧的属性名和左侧的属性名相同，就可以把两者合并到一起  如果没有  就找左侧的默认值  还没有  就是只是声明了 没有定义 就是undefined 
+    //如果左侧的对象中  属性名和变量名字一样  左侧可以直接合并
+    //要想到左侧的属性值：变量名字一样  一一对应之后就简单啦
+
+    //左侧的变量名和属性名一样
+    // let { nickname, age } = { age: 27, nickname: '阳明' };
+    // console.log(nickname, age);  //输出 '阳明' 27
+
+
+    // 场景2，可以通过:为变量改名
+    // let { b, nickname: a } = { nickname: '王阳明' };
+    // console.log(b, a); //输出 undefined '王阳明'
+
+    // 默认值
+    // var { b = 1, nickname: a, age: b = 1 } = { nickname: '王阳明' };
+    // console.log(b, a, nickname);  //输出  （1 '王阳明'） 报错nickname没声明没定义
+
+
+    // 复杂的嵌套，只要符合模式，即可解构
+    // let obj = {
+    //     nickname: 'zhangsan',
+    //     age: 22,
+    //     dog: {
+    //         nickname: '毛毛',
+    //         age: 3
+    //     }
+    // };
+    // 如何才能把'毛毛'和3解析出来
+    // let { dog: { nickname, age } } = obj;
+    // console.log(nickname, age);
+
+    //如何才能把 'zhangsan'和 3输出出来    一一对应
+    // let { nickname, dog: { age } } = obj;
+    // console.log(nickname, age);
+
+
+    // 假设从服务器上获取的数据如下
+    // let res = {
+    //     data: ['a', 'b', 'c'],
+    //     meta: {
+    //         code: 200,
+    //         msg: '获取数据成功'
+    //     }
+    // }
+    // // 如何获取到 code 和 msg
+
+    // let { meta: { code, msg } } = res;
+    // console.log(code, msg);
+
+    // let { max, min, PI } = Math;  //Math是一个对象
+    // console.log(max, min, PI);  //输出 max函数 min函数 PI的值
+
+
+    //剩余值
+    // 把其它的属性全收集起来放在一个对象 
+    //  1. 如果收不到剩余的，则它是一个空对象。
+    //  2.只能出现在最后一个元素前
+    let obj = { nickname: 'zs', age: 20, gender: '男' };
+    let { nickname, ...a } = obj;
+    console.log(nickname, a);   //输出 'zs' {age:20,gender:'男'}  以对象的形式出现  里面包括属性名：属性值
+
+</script>
+
+</html>
