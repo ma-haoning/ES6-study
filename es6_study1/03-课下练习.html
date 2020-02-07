@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //1.
+    // {
+    //     let age = 18;
+    //     console.log(age); // 18
+    // }
+    // console.log(age);  //报错没有声明没有定义  {}内容是块级作用域
+
+
+    //2.????????????
+    // for (let i = 0; i < 11; i++) {
+
+    // }
+    // console.log(i);   //输出 undefined  
+
+
+    //3.
+    // for (var i = 0; i <= 9; i++) {
+
+    // }
+    // console.log(i);  //输出10
+
+
+    //4.
+    // console.log(gender);
+    // let gender = '男';   //输出 报错  let没有变量提升
+
+
+    //5.????????????????
+    // debugger;
+    // console.log(a);  //输出 undefined  var 变量提升
+    // var a = 1;
+    // let b = 2;
+    // let name = 'ok'
+    // console.info(a, b)  //输出 1 2 var let 
+    // console.info(window.a)  //输出  1  var有window对象的属性
+    // console.info(window.b)  //输出   undefined let没有window的属性
+    // console.info(window.name)  //输出  ''   name是一个关键字
+
+
+    //6.
+    // const b = 1;
+    // b = 2;
+    // console.log(b);   //报错  const不能重复设置
+
+
+    //7.
+    // const obj = { a: 1 };
+    // obj = 2;
+    // console.log(b);   //报错   地址变啦
+
+
+    //8.
+    // const obj = { a: 1 };
+    // obj.b = 2;
+    // console.log(obj);    // 输出  {a:1,b:2}
+
+
+    //9.？？？？？？？？？
+    // const obj = { a: 1, b: [1] };
+    // obj.b[2] = 2;
+    // console.log(obj);   //输出   
+
+
+    //数组解构赋值
+    //1.
+    // let arr = [5, 9, 10];
+    // let [a, b, c] = arr;
+    // console.log(a, b, c);   //输出  5 9 10
+
+
+    //2.
+    // let arr = [5, 9, 10];
+    // let [a, b, c, d] = arr;
+    // console.log(a, b, c, d);   //输出 5 9 10 undefined
+
+
+    //3.
+    // let arr = [5, 9, 10, 8, 3, 2];
+    // let [, , a, , b] = arr;
+    // console.log(a, b);   //输出 10 3
+
+
+    //4.
+    // let arr = ['zhangsan', 18, ['175cm', '65kg']];
+    // // 如何让a的值是175cm,b的值是'zhangsan
+    // // 请输入你的代码
+    // let [b, , [a, ,]] = arr;
+    // console.log(a, b); // 175cm 'zhangsan'
+
+
+    //5.
+    // let arr = [1, 2, 3, 4, 5];
+    // let [a, b, ...c] = arr;
+    // console.log(a, b, c);   //输出  1 2 [3,4,5]
+
+
+    //6.
+    // let arr = [1, 2];
+    // let [a = 2, b, c = 3] = arr;
+    // console.log(a, b, c);   //输出 1 2 3  一一对应即可
+
+
+    //7.
+    // var a = 1, b = 2;
+    // // 写代码,实现互换a,b的值
+    // //  
+    // var [a, b] = [b, a]  //一一对应 
+    // console.info(a, b); // 要求输出 2, 1
+
+
+
+
+    //对象解构赋值
+    //1.
+    // let { name, age, address = '1' } = { age: 27, name: '阳明' };
+    // console.log(name, age, address);  //输出  '阳明' 27 '1'
+
+
+    //2.
+    // let { b, name: a } = { name: '王阳明' };
+    // console.log(b, a, name);  //输出  undefined   '王阳明'  ''   name是关键字
+
+
+    //3.
+    // let { name = 'a', age, address = '1' } = {};
+    // console.log(name, age, address);  //输出  'a' undefined '1' 
+
+
+
+    //4.
+    // let obj = {
+    //     name: 'zhangsan',
+    //     age: 22,
+    //     dog: {
+    //         name1: '毛毛',
+    //         age: 3
+    //     }
+    // };
+    // // 下面写一句代码，把 zhangsan '毛毛' 解析出来
+    // //  你的代码
+    // let { name, dog: { name1 } } = obj;
+    // console.log(name, name1); // zhangsan '毛毛'
+
+
+    //5.
+    // let response = {
+    //     data: ['a', 'b', 'c'],
+    //     meta: {
+    //         code: 200,
+    //         msg: '获取数据成功'
+    //     }
+    // }
+    // // 如何获取到 code 和 msg
+    // // 你的代码
+    // let { data: [, d, ,], meta: { code } } = response;
+    // console.log(code, d); // 200, 'b'
+
+
+    //6.
+    // let obj = { name: 'zs', age: 20, gender: '男' };
+    // let { age, ...a } = obj;
+    // console.log(age, a);  //输出 20 {name:'zs',gender:'男'}
+
+
+
+    //函数
+    //1.
+    // function f(a = 1, b = 2) {
+    //     console.log(a, b, a + b);
+    // }
+    // f(10)  //输出 10 2 12
+    // f(10, 20)  //输出 10 20 30
+    // f()  //输出 1 2 3
+
+
+    //2.
+    // function f2(a = 1, b) {
+    //     console.log(a, b, a + b);
+    // }
+    // f2(10)   //输出 10 undefined Nan
+    // f2(10, 20)  //输出 10 20 30
+    // f2(, 3)  //报错
+    // f2()   //输出 1 undefined Nan
+
+
+    //3.????????????????????????
+    // function f1({ a = 1, b = 2 } = {}) {
+    //     console.log(a, b, a + b);
+    // }
+
+    // f1({ a: 10, b: 20 })
+    // f1({ a: 20 })
+    // f1({ c: 1 })
+    // f1()
+
+
+    //4.
+    // function f2(x, ...y) {
+    //     console.log(x, y)
+    // }
+    // f2(1, 2);   //输出 1 [2]   不管是不是一一对应  只要出现...  也就是出现剩余值  就包括在数组内  函数特殊包括在数组内
+    // f2(2, 3, 4);   //输出 2 [3,4]
+
+
+
+    //5.
+    // function f1(x, y) {
+    //     console.log(x, y)
+    // }
+    // f1(1, 2);   //输出  1 2
+    // f1(2, 3, 4);  //输出 2 3
+</script>
+
+</html>
