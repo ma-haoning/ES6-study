@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //函数声明式
+    // function fn(参数1,参数2) {
+    //     函数体
+    // }
+
+    //函数表达式
+    // var fn = function (参数1, 参数2) {
+    //     函数体
+    // }
+
+    //箭头函数  在函数表达式的基础上  把function放在参数和函数体之间  然后把function 换成 =>  如果只有一个参数  可以直接省略()  如果函数体只有一句代码  可以省略  {},   如果函数体只有一句代码并且是return语句  可以省略return和{},如果返回值是一个对象,就有()包着   
+    // var fn = (参数1, 参数2) => {
+    //     //函数体
+    // }
+
+    // let f = x => { return { a: 1 } }
+    // 可以简化成：
+    // let f = x => { a: 1 } // undefined
+    // let f = x => ({ a: 1 })
+    // console.log(f());
+    //  普通函数和箭头函数的区别
+
+        //1.箭头函数没有arguments这个方法 一般用...rest来收集函数调用的实参
+        //2.箭头函数不能当做构造函数
+        //3.箭头函数内部没有this指向 箭头函数的this指向一般指的是window  普通函数谁调用指向谁
+</script>
+
+</html>

@@ -1,0 +1,34 @@
+<script>
+
+    // //1.对对象进行合并  格式 Object.assign({目标对象},{对象1},{对象2}) 
+    // var obj = Object.assign({}, { b: 2 }, { c: 3 });  //这里的目标对象就是 {}  返回的合并之后的对象
+    // console.log(obj);
+
+
+    //2.对象的扩展运算符  ...
+    // var obj = { a: 1, b: 2 };
+    // var obj1 = { c: 3, d: 4 };
+    // let obj3 = { ...obj, ...obj1 }
+    // console.log(obj3);
+
+
+    // var arr = [1, 2, 3];
+    // console.log(...arr);
+
+    //数组的...运算符把数组分成了各个元素  然而对象的...运算符可以进行合并
+
+    //3.对象可以简写
+
+    //如果对象的属性值是一个变量  并且变量名字和属性名字一样  则可以简写成变量名
+
+    //对于方法  则可以省略  :function  只能是普通函数  箭头函数不可以简写
+    let obj = {
+        "name": name,   //简写的写法 name,
+        "type": type,   //简写的写法  type,
+        fn: function () {   //简写的写法 fn (){
+            console.log("aaa");   //console.log("aaa");
+
+        }                           //}    
+    }
+
+</script>

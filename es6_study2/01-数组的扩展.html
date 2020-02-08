@@ -1,0 +1,78 @@
+<script>
+    //1.   ...数组   ...除了是剩余值rest的写法  也是数组的使用方法  它会把数组拆成单个的元素
+    // console.log(...[1, 2, 3]);
+    // //1)数组的拷贝  这种拷贝是浅拷贝
+    // var arr = [1, 2, 3];
+    // var arr1 = [...arr];
+    // // console.log(arr1 == arr); 地址不一样  只是地址内的内容一样 输出 false
+    // // arr[0] = 0;
+    // arr1[0] = 0
+    // console.log(arr, arr1);
+    // //2)数组的合并
+    // console.log([...[1, 2, 3], ...[4, 5, 6]]);
+    // /3)应用3
+    // console.log(Math.max(...[1, 2, 3]));
+
+
+    //2. Arrar.from  可以把非数组转换为数组
+    // let fn = function (...rest) {
+    //     console.log(Array.from(arguments));
+    // }
+    // console.log(fn(1, 2, 3));
+
+
+    //3.find，findIndex方法  find(回调函数)   item是每一个数组成员 index 数组的下标  self是整个数组  find满足条件的第一个数组成员   findIndex满足条件是第一个数组成员的下标
+    // let res = [1, 2, 3, 4, 5].find(function (item, index, self) {
+    //     // console.log(item, index, self);
+    //     if (item < 2) {
+    //         return true
+    //     }
+    // })
+    // console.log(res);
+    //简写
+    // let res = [1, 2, 3, 4, 5].find(item => item < 2)
+    // console.log(res);
+    // let data = [
+    //     { id: 2, name: '严嵩', age: 15 },
+    //     { id: 3, name: '徐阶', age: 17 },
+    //     { id: 4, name: '高拱', age: 18 },
+    //     { id: 1, name: '张居正', age: 12 },
+    // ]   //找到  18
+    // var res = data.find(function (item) {
+    //     if (item.name == "高拱") {
+    //         return true
+    //     }
+    // });
+    // console.log(res.age);
+    //可以简写成
+    // var res = data.find(item => item.name == "高拱");
+    // console.log(res.age);
+
+
+    //4.includes方法  第一个参数是要找的数组成员 第二个参数是从哪个下标开始找  返回的是true或者false  第二个参数可以省略 如果省略默认从下标0开始找
+    // console.log([1, 2, 3, 4].includes(2, 3));
+
+
+    //5.repeat方法  重复的意思  返回的是新的字符串
+    // var str = "html";
+    // console.log(str.repeat(100));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
