@@ -20,11 +20,11 @@
     // console.log(age);  //报错没有声明没有定义  {}内容是块级作用域
 
 
-    //2.????????????
+    //2.
     // for (let i = 0; i < 11; i++) {
-
+    //     //有let的for循环是一个隐藏的块级作用域
     // }
-    // console.log(i);   //输出 undefined  
+    // console.log(i);  //输出  报错  
 
 
     //3.
@@ -39,9 +39,9 @@
     // let gender = '男';   //输出 报错  let没有变量提升
 
 
-    //5.????????????????
+    //5.
     // debugger;
-    // console.log(a);  //输出 undefined  var 变量提升
+    // console.log(a);  //输出 undefined  var 变量提升  只是提升了 var a;  仅仅是声明了一下
     // var a = 1;
     // let b = 2;
     // let name = 'ok'
@@ -69,10 +69,10 @@
     // console.log(obj);    // 输出  {a:1,b:2}
 
 
-    //9.？？？？？？？？？
+    //9.
     // const obj = { a: 1, b: [1] };
     // obj.b[2] = 2;
-    // console.log(obj);   //输出   
+    // console.log(obj);   //输出    {a:1,b:[1, ,2]}
 
 
     //数组解构赋值
@@ -197,15 +197,15 @@
     // f2()   //输出 1 undefined Nan
 
 
-    //3.????????????????????????
+    //3.
     // function f1({ a = 1, b = 2 } = {}) {
     //     console.log(a, b, a + b);
     // }
 
-    // f1({ a: 10, b: 20 })
-    // f1({ a: 20 })
-    // f1({ c: 1 })
-    // f1()
+    // f1({ a: 10, b: 20 })  //输出 10 20 30 
+    // f1({ a: 20 })  //输出 20 2 22
+    // f1({ c: 1 })  //输出    1 2 3
+    // f1()   //输出 1 2 3
 
 
     //4.
@@ -223,6 +223,21 @@
     // }
     // f1(1, 2);   //输出  1 2
     // f1(2, 3, 4);  //输出 2 3
+
+
+    // const obj = { a: 1 };
+    // obj = { a: 2 }; //会报错  因为const是常量   不能重复定义  
+    // // obj.a = 2   //地址没有变  只是把地址后面的属性值改变  
+    // console.log(obj);
+
+
+    // let obj = { a: 1 };
+    // obj = { a: 2 }   //重新定义的意思是  加上 let 这里只是把obj重新给赋值了一下
+    // console.log(obj);
+
+
+
+
 </script>
 
 </html>
