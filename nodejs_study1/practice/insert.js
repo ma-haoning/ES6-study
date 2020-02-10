@@ -28,7 +28,7 @@ let add_message = (name, content) => {
     arr.push(obj);
 
     let str = JSON.stringify(arr);
-    console.log(arr);
+    // console.log(arr);
 
     fs.writeFile(fileAbs, str, err => {
         if (err) throw err;
