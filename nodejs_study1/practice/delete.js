@@ -52,4 +52,4 @@ let del_message = id => {
     })
 }
 
-del_message(3);
+del_message(8);
