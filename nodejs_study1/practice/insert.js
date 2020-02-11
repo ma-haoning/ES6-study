@@ -16,9 +16,10 @@ let get_message = () => {
 let add_message = (name, content) => {
     let arr = get_message();
     // console.log(arr);
-
+    //最后一个元素的id+1   给要添加的内容的id在最后一个元素的基础上加上1
+    let id = arr.length ? arr[arr.length - 1].id + 1 : 1
     let obj = {
-        id: arr.length + 1,
+        id,
         name,
         content,
         dt: Date.now()
@@ -38,4 +39,6 @@ let add_message = (name, content) => {
 
 
 }
+
+
 add_message("mhn", 123456);

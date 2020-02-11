@@ -11,48 +11,45 @@ let get_message = () => {
     return arr;
 }
 
+// let del_message = id => {
+//     //先获取数组
+//   
+//     // console.log(arr);
+//     arr.forEach((item, index, arr) => {
+//         if (id == item.id) {
+//             arr.splice(index, 1);
+//             var str = JSON.stringify(arr);
+//             //覆盖目标文件的内容
+//             fs.writeFile(fileAbs, str, err => {
+//                 if (err) throw err;
+//                 console.log("删除成功");
+//             })
+//         }
+//     });
+
+
+// }
+
+
+
+
 let del_message = id => {
-    //先获取数组
     let arr = get_message();
-    // console.log(arr);
-    arr.forEach((item, index, arr) => {
-        if (id == item.id) {
-            arr.splice(index, 1);
-            var str = JSON.stringify(arr);
-            //覆盖目标文件的内容
-            fs.writeFile(fileAbs, str, err => {
-                if (err) throw err;
-                console.log("删除成功");
-            })
-        }
-    });
+    //   普通函数 转 箭头函数
+    let a = arr.findIndex(item => item.id == id);
+    console.log(a); //输出 下标
+    //此处的a就是从哪个下标开始
+    arr.splice(a, 1);
+    //转化为json格式的字符串
+    console.log(arr);
 
+    var str = JSON.stringify(arr);
+    //覆盖目标文件的内容
+    fs.writeFile(fileAbs, str, err => {
+        if (err) throw err;
+        console.log("删除成功");
 
+    })
 }
 
-
-del_message(2);
-
-// //   普通函数 转 箭头函数
-// let a = arr.findIndex(item => item.id == id);
-// console.log(a); //输出 下标
-
-
-
-
-// if (id == a + 1) {
-//     //此处的a就是从哪个下标开始
-//     arr.splice(a, 1);
-//     //转化为json格式的字符串
-//     console.log(arr);
-
-//     var str = JSON.stringify(arr);
-//     //覆盖目标文件的内容
-//     fs.writeFile(fileAbs, str, err => {
-//         if (err) throw err;
-//         console.log("删除成功");
-
-//     })
-// } else {
-//     console.log("您选的id已被删除")
-// }
+del_message(3);

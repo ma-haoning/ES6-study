@@ -4,10 +4,7 @@ const fs = require("fs");
 const path = require("path");
 //定义一下文件的绝对路径
 let fileAbs = path.join(__dirname, "./message.json")
-let res = fs.readFileSync(fileAbs, "utf8", (err, data) => {
-    if (err) throw err;
-    console.log(data);
-});
+let res = fs.readFileSync(fileAbs, "utf8");
 // console.log(res);
 let arr = JSON.parse(res);
 console.log(arr);
