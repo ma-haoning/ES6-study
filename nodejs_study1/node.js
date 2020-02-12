@@ -15,10 +15,15 @@
 //readFile  默认是异步
 const fs = require("fs");
 const path = require("path")
-fs.readFile(path.join(__dirname, "01.js"), "utf8", (err, data) => {
-  if (err) throw err;
-  //Buffer格式转化为字符串格式
-  console.log(data);
+fs.readFile(path.join("./01.js"), "utf-8", (err, data) => {
+  if (err) {
+    throw err;
+    console.log(err);
+
+  } else {
+    //Buffer格式转化为字符串格式
+    console.log(data)
+  }
   // console.log(path.basename("a/a.txt"));
   // console.log(path.parse(path.join(__dirname, "./01.js")));
   // console.log(__filename); //当前的node.js的文件的绝对地址
