@@ -12,6 +12,7 @@ const server = http.createServer((req, res) => {
         //响应并传回来数据
         let filePath = path.join(__dirname, STATIC_path, req.url);
         let pathName = path.extname(req.url);
+        //这里设置的绝对路径下的文件夹名  意思是  如果index.html文件中有index.css  index.css肯定有个引入的路径才可以到index.html中  这时这个路径就会去重新读取文件  这个路径就是req.url
         let a = fs.readFileSync(filePath, "utf8");
         if (obj[pathName]) {
             res.setHeader("content-type", obj[pathName]);
