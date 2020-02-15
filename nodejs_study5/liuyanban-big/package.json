@@ -1,6 +1,7 @@
 {
-  "name": "download-nodemon",
+  "name": "liuyanban-big",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -8,5 +9,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "dependencies": {
+    "express": "^4.17.1",
+    "multer": "^1.4.2"
+  }
 }
