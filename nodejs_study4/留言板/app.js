@@ -25,7 +25,7 @@ const obj = {
 //创建服务器
 let server = http.createServer((req, res) => {
     //在控制台上显示哪些ip地址访问过
-    console.log(req.connection.remoteAddress);
+    // console.log(req.connection.remoteAddress);
     //对req.url就行解析 pathname   以下对接口的操作 
     let obj1 = url.parse(req.url, true);
     //有参数的get请求
@@ -36,7 +36,7 @@ let server = http.createServer((req, res) => {
     let data2 = data1.filter(item => {
         return dt > item.dt
     });
-    res.setHeader("content-type", "application/json;chartset=utf-8");
+
     if (obj1.pathname == "/getMsg" || url.method == "GET") {
         //获取到全部接口的信息
         let objj = {
@@ -50,6 +50,7 @@ let server = http.createServer((req, res) => {
             msg: "获取失败",
             data: data2
         }
+        res.setHeader("content-type", "application/json;chartset=utf-8");
         dt ? res.end(JSON.stringify(obj22)) : res.end(JSON.stringify(objj))
     } else if (obj1.pathname == "/addMsg" || url.method == "POST") {
         //post参数获取内容  
